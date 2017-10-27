@@ -1,10 +1,4 @@
-﻿//
-//  PhoneTranslator.cs
-//
-//  Author:
-//       trand <devtrand@gmail.com>
-
-using System.Text;
+﻿using System.Text;
 using System;
 
 namespace Phoneword_iOS
