@@ -57,6 +57,16 @@ namespace Phoneword_iOS
 					PresentViewController(alert, true, null);
 				}
 			};
+
+            CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
+                // Launches a new instance of CallHistoryController
+                CallHistoryController callHistory = this.Storyboard.InstantiateViewController("CallHistoryController") as CallHistoryController;
+                if (callHistory != null)
+                {
+                    callHistory.PhoneNumbers = PhoneNumbers;
+                    this.NavigationController.PushViewController(callHistory, true);
+                }
+            };
         }
 
         public override void DidReceiveMemoryWarning()
@@ -65,6 +75,7 @@ namespace Phoneword_iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
+        /*
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
@@ -78,5 +89,6 @@ namespace Phoneword_iOS
                 callHistoryContoller.PhoneNumbers = PhoneNumbers;
             }
         }
+        */
     }
 }
